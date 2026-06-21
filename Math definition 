@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Definitions – Class 11</title>
+    <!-- MathJax 3 (no polyfill needed for modern browsers) -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --purple-dark: #4e2b82;
+            --purple-title: #5b2e91;
+            --purple-text: #6b33a1;
+            --green-text: #1a8b41;
+            --border-color: #d1c8e1;
+            --text-main: #111111;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8fb;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid var(--purple-dark);
+            border-radius: 8px;
+            padding: 30px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .decorative-lines svg {
+            width: 40px;
+            height: 30px;
+            stroke: var(--purple-title);
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        .title-pill {
+            background-color: var(--purple-title);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            padding: 5px 30px;
+            border-radius: 8px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--green-text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* List Items Layout */
+        .definition-item {
+            display: flex;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: flex-start;
+        }
+
+        .definition-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-number {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--purple-text);
+            min-width: 30px;
+        }
+
+        .item-content {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .item-title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--purple-text);
+            margin: 0 0 8px 0;
+        }
+
+        .item-graphic {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 250px;
+        }
+
+        /* Specific text styling */
+        .math-block {
+            margin: 10px 0;
+        }
+
+        ul.rules-list {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+
+        ul.rules-list li {
+            margin-bottom: 4px;
+        }
+
+        /* SVG Graph Styling */
+        svg text {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 14px;
+            fill: black;
+        }
+        svg .axis {
+            stroke: black;
+            stroke-width: 1;
+        }
+        svg .tick {
+            stroke: black;
+            stroke-width: 1;
+        }
+        svg .curve-blue  { fill: none; stroke: #1d70b8; stroke-width: 1.5; }
+        svg .curve-red   { fill: none; stroke: #d1232a; stroke-width: 1.5; }
+        svg .curve-green { fill: none; stroke: #0f8a44; stroke-width: 1.5; }
+        svg .curve-purple{ fill: none; stroke: #7b439c; stroke-width: 1.5; }
+        svg .dashed {
+            stroke-dasharray: 4,4;
+            stroke: gray;
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="title-wrapper">
+            <div class="decorative-lines">
+                <svg viewBox="0 0 40 30">
+                    <line x1="10" y1="5" x2="30" y2="15" />
+                    <line x1="5"  y1="15" x2="25" y2="15" />
+                    <line x1="10" y1="25" x2="30" y2="15" />
+                </svg>
+            </div>
+            <div class="title-pill">Definitions</div>
+            <div class="decorative-lines">
+                <svg viewBox="0 0 40 30" style="transform: scaleX(-1);">
+                    <line x1="10" y1="5" x2="30" y2="15" />
+                    <line x1="5"  y1="15" x2="25" y2="15" />
+                    <line x1="10" y1="25" x2="30" y2="15" />
+                </svg>
+            </div>
+        </div>
+        <h2 class="subtitle">Mathematics – Class 11</h2>
+    </div>
+
+    <!-- 1. Inverse of quadratic function (CORRECTED) -->
+    <div class="definition-item">
+        <div class="item-number">1.</div>
+        <div class="item-content">
+            <h3 class="item-title">Inverse of quadratic function</h3>
+            <p>
+                If \( f(x) = ax^2 + bx + c \), \( a \neq 0 \), is restricted to a domain on which it is
+                one–one (e.g., \( x \ge -\frac{b}{2a} \) or \( x \le -\frac{b}{2a} \)), then its inverse
+                \( f^{-1} : \text{Range}(f) \to \text{Domain}(f) \) satisfies
+                \( f^{-1}(f(x)) = x \) for all \( x \) in the restricted domain.
+            </p>
+        </div>
+        <div class="item-graphic">
+            <!-- Two side-by-side graphs: quadratic (left) and its inverse relation (right) -->
+            <svg width="280" height="100" viewBox="0 0 280 100">
+                <!-- Left axes (quadratic) -->
+                <line x1="10" y1="80" x2="110" y2="80" class="axis"/>
+                <polygon points="110,80 105,77 105,83" fill="black" />
+                <line x1="55" y1="90" x2="55" y2="10" class="axis"/>
+                <polygon points="55,10 52,15 58,15" fill="black" />
+                <text x="40" y="95" font-style="normal">O</text>
+                <text x="115" y="84">x</text>
+                <text x="57" y="12" font-size="12">y = f(x)</text>
+
+                <!-- Parabola: dips visibly to ~y=50 at vertex -->
+                <path d="M 20,20 Q 55,105 90,20" class="curve-blue"/>
+
+                <!-- Dashed connector between the two graphs -->
+                <line x1="90" y1="20" x2="160" y2="20" class="dashed"/>
+
+                <!-- Right axes (inverse relation) -->
+                <line x1="150" y1="80" x2="270" y2="80" class="axis"/>
+                <polygon points="270,80 265,77 265,83" fill="black" />
+                <line x1="200" y1="90" x2="200" y2="10" class="axis"/>
+                <polygon points="200,10 197,15 203,15" fill="black" />
+                <text x="273" y="84">x</text>
+                <text x="205" y="15">y</text>
+                <text x="230" y="22" fill="#d1232a" font-size="11">
+                    x = f<tspan dy="-4" font-size="8">−1</tspan><tspan dy="4">(y)</tspan>
+                </text>
+
+                <!-- Two branches of the inverse (sideways parabola) -->
+                <path d="M 255,50 Q 140,50 255,90" class="curve-red"/>
+                <path d="M 255,50 Q 140,50 255,15" class="curve-red"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 2. Absolute value -->
+    <div class="definition-item">
+        <div class="item-number">2.</div>
+        <div class="item-content">
+            <h3 class="item-title">Absolute value</h3>
+            <p>The absolute value of a real number \( x \), written \( |x| \), is defined as</p>
+            <div class="math-block">
+                \( |x| = \begin{cases} x, & \text{if } x \geq 0 \\ -x, & \text{if } x < 0 \end{cases} \)
+            </div>
+        </div>
+        <div class="item-graphic">
+            <svg width="250" height="80" viewBox="0 0 250 80">
+                <line x1="10" y1="60" x2="240" y2="60" class="axis"/>
+                <polygon points="240,60 235,57 235,63" fill="black" />
+                <polygon points="10,60 15,57 15,63" fill="black" />
+                <line x1="125" y1="70" x2="125" y2="10" class="axis"/>
+                <polygon points="125,10 122,15 128,15" fill="black" />
+                <text x="130" y="15" font-size="12">y = |x|</text>
+
+                <line x1="35"  y1="57" x2="35"  y2="63" class="tick"/><text x="28"  y="75" font-style="normal" font-size="12">−3</text>
+                <line x1="65"  y1="57" x2="65"  y2="63" class="tick"/><text x="58"  y="75" font-style="normal" font-size="12">−2</text>
+                <line x1="95"  y1="57" x2="95"  y2="63" class="tick"/><text x="88"  y="75" font-style="normal" font-size="12">−1</text>
+                <text x="121" y="75" font-style="normal" font-size="12">0</text>
+                <line x1="155" y1="57" x2="155" y2="63" class="tick"/><text x="151" y="75" font-style="normal" font-size="12">1</text>
+                <line x1="185" y1="57" x2="185" y2="63" class="tick"/><text x="181" y="75" font-style="normal" font-size="12">2</text>
+                <line x1="215" y1="57" x2="215" y2="63" class="tick"/><text x="211" y="75" font-style="normal" font-size="12">3</text>
+
+                <path d="M 75,10 L 125,60 L 175,10" class="curve-green"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 3. Domain -->
+    <div class="definition-item">
+        <div class="item-number">3.</div>
+        <div class="item-content">
+            <h3 class="item-title">Domain</h3>
+            <p>The domain of a function \( f \) is the set of all real numbers \( x \)<br>
+            for which \( f(x) \) is defined.</p>
+        </div>
+        <div class="item-graphic">
+            <svg width="220" height="70" viewBox="0 0 220 70">
+                <text x="30"  y="15" font-style="normal" font-size="13">Domain</text>
+                <text x="160" y="15" font-style="normal" font-size="13">Range</text>
+                <circle cx="50"  cy="45" r="20" fill="#e8f5e9" stroke="#81c784" stroke-width="1.5"/>
+                <circle cx="170" cy="45" r="20" fill="#e3f2fd" stroke="#64b5f6" stroke-width="1.5"/>
+                <text x="46"  y="50">x</text>
+                <text x="158" y="50">f(x)</text>
+                <line x1="75"  y1="45" x2="140" y2="45" stroke="black" stroke-width="1"/>
+                <polygon points="145,45 138,42 138,48" fill="black" />
+                <text x="105" y="35">f</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 4. Range (CORRECTED – removed "codomain") -->
+    <div class="definition-item">
+        <div class="item-number">4.</div>
+        <div class="item-content">
+            <h3 class="item-title">Range</h3>
+            <p>The range (or image) of a function \( f \) is the set of all<br>
+            real numbers \( y \) for which there exists \( x \) in the domain such that<br>
+            \( y = f(x) \).</p>
+        </div>
+        <div class="item-graphic">
+            <svg width="220" height="70" viewBox="0 0 220 70">
+                <text x="30"  y="15" font-style="normal" font-size="13">Domain</text>
+                <text x="160" y="15" font-style="normal" font-size="13">Range</text>
+                <circle cx="50"  cy="45" r="20" fill="#e8f5e9" stroke="#81c784" stroke-width="1.5"/>
+                <circle cx="170" cy="45" r="20" fill="#e3f2fd" stroke="#64b5f6" stroke-width="1.5"/>
+                <text x="46"  y="50">x</text>
+                <text x="165" y="50">y</text>
+                <line x1="75"  y1="45" x2="140" y2="45" stroke="black" stroke-width="1"/>
+                <polygon points="145,45 138,42 138,48" fill="black" />
+                <text x="105" y="35">f</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 5. Complex number and its modulus -->
+    <div class="definition-item">
+        <div class="item-number">5.</div>
+        <div class="item-content">
+            <h3 class="item-title">Complex number and its modulus</h3>
+            <p>A complex number is of the form \( z = a + bi \), where \( a, b \in \mathbb{R} \) and \( i = \sqrt{-1} \).<br>
+            The modulus (or absolute value) of \( z \) is \( |z| = \sqrt{a^2 + b^2} \).</p>
+        </div>
+        <div class="item-graphic">
+            <svg width="200" height="90" viewBox="0 0 200 90">
+                <line x1="20" y1="70" x2="150" y2="70" class="axis"/>
+                <polygon points="150,70 145,67 145,73" fill="black" />
+                <line x1="40" y1="80" x2="40" y2="10" class="axis"/>
+                <polygon points="40,10 37,15 43,15" fill="black" />
+                <text x="155" y="75" font-style="normal" font-size="12">Re(z)</text>
+                <text x="45"  y="15" font-style="normal" font-size="12">Im(z)</text>
+                <text x="25"  y="85" font-style="normal">O</text>
+
+                <line x1="40" y1="70" x2="100" y2="30" class="curve-red"/>
+                <polygon points="100,30 93,33 97,37" fill="#d1232a" />
+                <circle cx="100" cy="30" r="2" fill="#d1232a"/>
+
+                <line x1="100" y1="30" x2="100" y2="70" class="dashed"/>
+                <line x1="100" y1="30" x2="40"  y2="30" class="dashed"/>
+
+                <text x="105" y="28" font-size="12">z = a + bi</text>
+                <text x="96"  y="85">a</text>
+                <text x="28"  y="35">b</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 6. Echelon form -->
+    <div class="definition-item">
+        <div class="item-number">6.</div>
+        <div class="item-content">
+            <h3 class="item-title">Echelon form</h3>
+            <p style="margin-bottom: 5px;">A matrix is said to be in echelon form if</p>
+            <ul class="rules-list">
+                <li>All non–zero rows are above any rows of all zeros.</li>
+                <li>In each non–zero row, the first non–zero element (called leading element) is to the right of the leading element in the row above it.</li>
+                <li>All elements below each leading element are zero.</li>
+            </ul>
+        </div>
+        <div class="item-graphic" style="flex-direction: row; gap: 15px;">
+            <div>
+                \( \begin{bmatrix} 1 & 2 & 3 & 4 \\ 0 & 1 & 5 & 6 \\ 0 & 0 & 2 & 7 \\ 0 & 0 & 0 & 0 \end{bmatrix} \)
+            </div>
+            <div style="color: var(--purple-text); font-size: 13px;">(Echelon form)</div>
+        </div>
+    </div>
+
+    <!-- 7. Polynomial function -->
+    <div class="definition-item">
+        <div class="item-number">7.</div>
+        <div class="item-content">
+            <h3 class="item-title">Polynomial function</h3>
+            <p>A function \( f \) is called a polynomial function if it can be written in the form<br>
+            \( f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 \), where \( a_n \neq 0 \) and \( n \) is<br>
+            a non–negative integer.</p>
+        </div>
+        <div class="item-graphic" style="display: block; text-align: left;">
+            <p style="margin: 0; font-size: 14px;">Example: \( f(x) = 2x^3 - 3x^2 + x - 5 \)</p>
+            <p style="margin: 5px 0 0 0; color: var(--purple-text); font-size: 13px;">(Polynomial function of degree 3)</p>
+        </div>
+    </div>
+
+    <!-- 8. Vector -->
+    <div class="definition-item">
+        <div class="item-number">8.</div>
+        <div class="item-content">
+            <h3 class="item-title">Vector</h3>
+            <p>A vector is a quantity having both magnitude and direction.<br>
+            It is usually represented by a boldface letter or by an arrow<br>
+            over a letter, e.g., \( \vec{a}, \vec{b} \).</p>
+        </div>
+        <div class="item-graphic">
+            <svg width="200" height="50" viewBox="0 0 200 50">
+                <line x1="40" y1="40" x2="140" y2="20" class="curve-blue" stroke-width="2"/>
+                <polygon points="140,20 132,19 135,26" fill="#1d70b8" />
+                <text x="85" y="15" font-weight="bold" font-style="normal">a⃗</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 9. Cross product of two antiparallel vectors -->
+    <div class="definition-item">
+        <div class="item-number">9.</div>
+        <div class="item-content">
+            <h3 class="item-title">Cross product of two antiparallel vectors</h3>
+            <p>The cross product of two antiparallel vectors is the zero vector.<br>
+            That is, if \( \vec{a} \) and \( \vec{b} \) are antiparallel, then \( \vec{a} \times \vec{b} = \vec{0} \).</p>
+        </div>
+        <div class="item-graphic" style="gap: 20px;">
+            <svg width="150" height="40" viewBox="0 0 150 40">
+                <line x1="10"  y1="25" x2="70"  y2="25" stroke="#0f8a44" stroke-width="2"/>
+                <polygon points="70,25 62,21 62,29" fill="#0f8a44" />
+                <text x="35" y="15" fill="#0f8a44" font-weight="bold" font-style="normal">a⃗</text>
+
+                <line x1="140" y1="25" x2="90"  y2="25" stroke="#d1232a" stroke-width="2"/>
+                <polygon points="90,25 98,21 98,29" fill="#d1232a" />
+                <text x="110" y="15" fill="#d1232a" font-weight="bold" font-style="normal">b⃗</text>
+            </svg>
+            <div>
+                \( \vec{a} \times \vec{b} = \vec{0} \)
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Discontinuous function -->
+    <div class="definition-item">
+        <div class="item-number">10.</div>
+        <div class="item-content">
+            <h3 class="item-title">Discontinuous function</h3>
+            <p>A function \( f \) is said to be discontinuous at \( x = c \) if \( f \) is not<br>
+            defined at \( x = c \) or \( \lim_{x \to c} f(x) \) does not exist or<br>
+            \( \lim_{x \to c} f(x) \neq f(c) \).</p>
+        </div>
+        <div class="item-graphic">
+            <svg width="250" height="80" viewBox="0 0 250 80">
+                <line x1="10"  y1="60" x2="230" y2="60" class="axis"/>
+                <polygon points="230,60 225,57 225,63" fill="black" />
+                <line x1="50"  y1="70" x2="50"  y2="10" class="axis"/>
+                <polygon points="50,10 47,15 53,15" fill="black" />
+
+                <text x="235" y="64">x</text>
+                <text x="55"  y="15">y</text>
+                <text x="35"  y="75" font-style="normal">O</text>
+                <text x="118" y="75">c</text>
+
+                <path d="M 60,40 Q 90,15 120,40" class="curve-purple"/>
+                <path d="M 125,40 Q 150,60 180,40 T 210,40" class="curve-purple"/>
+
+                <circle cx="122.5" cy="40" r="2.5" fill="white" stroke="#7b439c" stroke-width="1.5"/>
+                <line x1="122.5" y1="43" x2="122.5" y2="60" class="dashed"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 11. Position vector -->
+    <div class="definition-item">
+        <div class="item-number">11.</div>
+        <div class="item-content">
+            <h3 class="item-title">Position vector</h3>
+            <p>The position vector of a point \( P(x, y, z) \) with respect to the<br>
+            origin \( O \) is the vector \( \vec{OP} \) drawn from \( O \) to \( P \).</p>
+        </div>
+        <div class="item-graphic">
+            <svg width="220" height="120" viewBox="0 0 220 120">
+                <!-- z‑axis (up) -->
+                <line x1="60" y1="90" x2="60" y2="15" class="axis"/>
+                <polygon points="60,15 57,20 63,20" fill="black" />
+
+                <!-- y‑axis (right) -->
+                <line x1="60" y1="90" x2="180" y2="90" class="axis"/>
+                <polygon points="180,90 175,87 175,93
